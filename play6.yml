@@ -1,0 +1,14 @@
+---
+ - name: Play to copy repos file 
+   hosts: [ sun, earth, galaxy ]
+   become: true
+   become_user: root
+   tasks:
+   - name: install vim
+     yum:
+      name: vim
+      state: latest
+
+
+...
+      

@@ -1,0 +1,13 @@
+---
+ - name: Create user and copy sudoers
+   hosts: 
+    - 192.168.1.88
+     - 192.168.1.86
+   tasks:
+   - name: create user now
+     user:
+      name: devops
+      uid: 2999
+      comment: devops user
+      password: $6$myAnsi$HZZqEOAq3vOz6r784YTtj68zAKkIyj3U9IYx2hYKU2Sqk536l13YDHnLN.mf6UZHaecp07bsPhFsIoQEnQ8.N.
+     state: absent

@@ -1,0 +1,26 @@
+---
+ - name: Play to copy repos file 
+   hosts: [ sun, earth, galaxy ]
+   become: true
+   become_user: root
+   tasks:
+   - name: install  http,samba and mysql
+     yum:
+      name: 
+       - httpd
+      state: present
+   - name: Configure index file file
+     copy:
+      dest: /var/www/html/index.html
+      content: '<html><h1>This is my website<br>Done by ansible</h1></html>'
+   - name: Start http service
+     service:
+      name: httpd
+      state: started
+      enabled: yes
+
+
+
+
+...
+      

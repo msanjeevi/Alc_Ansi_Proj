@@ -1,0 +1,17 @@
+---
+ - name: Play to copy repos file 
+   hosts: [ sun, earth, galaxy ]
+   become: true
+   become_user: root
+   tasks:
+   - name: install  http,samba and mysql
+     yum:
+      name: 
+       - httpd
+       - samba
+       - mysql
+      state: absent
+
+
+...
+      

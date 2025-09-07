@@ -1,0 +1,17 @@
+---
+ - name: Play to copy repos file 
+   hosts: [ sun, earth, galaxy ]
+   become: true
+   become_user: root
+   tasks:
+   - name: Task to copy the file
+     copy:
+      src: /etc/yum.repos.d/loaca.repo
+      dest: /etc/yum.repos.d/local.repo
+   - name: Install vim software if it doesnt installed
+     yum:
+      name: vim-common
+      state: latest
+
+...
+      
